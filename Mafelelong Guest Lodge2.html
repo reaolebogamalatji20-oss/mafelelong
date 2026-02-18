@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafelelong Stay | Guest Lodge</title>
+    <style>
+        :root {
+            --primary: #FBF6D9;
+            --accent: #513B1C;
+            --light: #f8f9fa;
+            --dark: #333;
+        }
+        
+        body { font-family: Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--dark); line-height: 1.6; background-color: #fff;}
+		
+		/* Navigation/Header */
+        header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding 40px 20px;
+			background: var(--primary);
+			box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+		}
+		
+		/*Logo Styling */
+		.logo-container img {
+			height: 100px;
+			width: auto;
+			margin-bottom: 10px;
+		}
+		
+		/*Guest House Name Styling*/
+		.guest-house-name {
+			font-size: 24px;
+			font-weight: bold;
+			color: #4a3728;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+        
+        /* Hero Section */
+        .hero { 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/Background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center; 
+            color: white;
+            border-bottom: 5px solid var(--primary);
+        }
+
+        .btn { background: var(--accent); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #3d2c15; transform: scale(1.05); }
+
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        h2 { color: var(--accent); border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
+        
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 250px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #eee;
+        }
+        .slide { display: none; width: 100%; height: 100%; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            user-select: none;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev { left: 0; border-radius: 0 3px 3px 0; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+        /* Grid and Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { border: 1px solid #eee; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .price { color: var(--accent); font-weight: bold; font-size: 1.3rem; margin-top: 10px; }
+        
+        /* Contact Form Styles */
+        .contact-form { display: flex; flex-direction: column; gap: 12px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .rules-list { background: #fdfcf0; padding: 25px; border-left: 10px solid var(--primary); border-radius: 8px; }
+        footer { text-align: center; padding: 30px; background: var(--primary); color: var(--accent); margin-top: 60px; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class = "logo-container">
+		<a href = "/">
+			<img src = "Images/logo.jpg" alt = "House Logo">
+		</a>
+	</div>
+	
+	<div class = "guest-house-name">
+		Mafelelong Guest Lodge
+	</div>
+</header>
+	
+<section class="hero">
+    <div class="container">
+        <h2 style="color: white; border-bottom: none; font-size: 2.8rem;">Welcome to your Oasis</h2>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: auto; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+            We believe that travel is about the feeling of coming home, even when you're miles away.
+        </p>
+        <a href="#contact" class="btn">BOOK YOUR STAY</a>
+    </div>
+</section>
+
+<div class="container">
+    <section>
+        <h2>Our Story</h2>
+        <p>Nestled in the heart of Leagajang, our guest lodge was born out of a passion for authentic hospitality and a love for our local community. Whether you're here for city gems or a quiet recharge, we've designed every inch of our space with your peace of mind in mind.</p>
+    </section>
+    
+    <section style="margin-top: 40px;">
+        <h2>Explore Our Rooms</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <h3>House 1</h3>
+				<p> 6 Sleeper/ Standard Room</p>
+				<p>Features three bedrooms with queen-sized beds, kitchennet, and a cozy lounge area.</p>
+                <div class="slideshow-container" id="slideshow-1">
+                    <div class="slide"><img src="Images/House1.jpg" alt="House 1"></div>
+                    <div class="slide"><img src="Images/Bedroom1.jpg" alt="Bedroom"></div>
+                    <div class="slide"><img src="Images/Kitchen.jpg" alt="Kitchen"></div>
+                    <div class="slide"><img src="Images/Lounge.jpg" alt="Lounge"></div>
+                    <a class="prev" onclick="changeSlide(-1, 0)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1, 0)">&#10095;</a>
+				</div>
+                <p class="price">Starting at R650 p/n</p>
+            </div>
+            
+            <div class="card">
+                <h3>House 2</h3>
+				<p>3 Sleeper</p>
+				<p>Features a king-sized bed and a three-quarter bed. Perfect for small families.</p>
+                <div class="slideshow-container" id="slideshow-2">
+                    <div class="slide"><img src="Images/House2.jpg" alt="House 2"></div>
+                    <div class="slide"><img src="Images/Bedroom2.jpg" alt="Bedroom"></div>
+                    <div class="slide"><img src="Images/Kitchennet2.jpg" alt="Kitchen"></div>
+                    <a class="prev" onclick="changeSlide(-1, 1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1, 1)">&#10095;</a>
+				</div>
+                <p class="price">Starting at R850 p/n</p>
+            </div>
+            
+            <div class="card">
+                <h3>House 4</h3>
+				<p>4 Sleeper</p>
+				<p>Room 1 & 2: Features a king-sized bed and a three-quarter bed.</p>
+                <div class="slideshow-container" id="slideshow-3">
+                    <div class="slide"><img src="Images/House4.jpg" alt="House 4"></div>
+                    <div class="slide"><img src="Images/Bedroom4.jpg" alt="Bedroom"></div>
+                    <div class="slide"><img src="Images/Kitchennet4.jpg" alt="Kitchen"></div>
+                    <a class="prev" onclick="changeSlide(-1, 2)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1, 2)">&#10095;</a>
+				</div>
+                <p class="price">Starting at R950 p/n</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="margin-top: 60px;">
+        <h2>Contact & Bookings</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Send us a Message</h3>
+                <form action="https://formspree.io/f/xreaezjq" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <textarea name="message" rows="5" placeholder="Tell us your check-in dates and number of guests..." required></textarea>
+                    <button type="submit" class="btn">SEND ENQUIRY</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Get in Touch</h3>
+                <p><strong>📍 Address:</strong> R510 Dikweipi 2, North West, South Africa</p>
+                <p><strong>📞 Phone:</strong> <a href="tel:0829384567" style="color: inherit;">082 938 4567</a> / <a href="tel:0784234282" style="color: inherit;">078 423 4282</a></p>
+                <p><strong>📧 Email:</strong> <a href="mailto:reaolebogamalatji20@gmail.com" style="color: inherit;">reaolebogamalatji20@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 60px;">
+        <h2>House Rules</h2>
+        <div class="rules-list">
+            <p><strong>🕒 Check-In:</strong> 15:00 - 21:00 PM | <strong>Check-Out:</strong> 11:00 AM</p>
+            <p><strong>🚭 Smoking:</strong> Outdoors Only. 100% Smoke-free interior.</p>
+            <p><strong>🤫 Quiet Hours:</strong> 23:00 PM - 8:00 AM.</p>
+            <p><strong>🐾 Pets:</strong> We maintain a pet-free environment.</p>
+			<p><strong>🔑 Security:</strong> Please ensure doors are locked when leaving.</p>
+			<p><strong>✨ Care of Property:</strong> Please report any breakages or spills immediately so we can handle them before they become permanent.</p>
+		</div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Mafelelong Guest Lodge</p>
+    <p>R510 Dikweipi, North West, South Africa | 082 938 4567 / 078 423 4282</p>
+</footer>
+
+<script>
+    // Handle multiple slideshows
+    let slideIndex = [1, 1, 1];
+    let slideId = ["slideshow-1", "slideshow-2", "slideshow-3"];
+
+    // Show initial slides
+    showSlides(1, 0);
+    showSlides(1, 1);
+    showSlides(1, 2);
+
+    function changeSlide(n, no) {
+        showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+        let i;
+        let container = document.getElementById(slideId[no]);
+        let slides = container.getElementsByClassName("slide");
+        if (n > slides.length) {slideIndex[no] = 1}    
+        if (n < 1) {slideIndex[no] = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex[no]-1].style.display = "block";  
+    }
+</script>
+
+</body>
+</html>
